@@ -1,22 +1,29 @@
 package ar.unrn.eje1;
 
-public class Libro {
-  public static final int INFANTILES = 2;
-  public static final int REGULARES = 0;
-  public static final int NUEVO_LANZAMIENTO = 1;
-  private String nombre;
-  private int codigoPrecio;
+public abstract class Libro {
 
-  public Libro(String nombre, int priceCode) {
-    this.nombre = nombre;
-    this.codigoPrecio = priceCode;
-  }
+	private String nombre;
+	private int codigoPrecio;// ver si cambiar a INTEGER
 
-  public int codigoPrecio() {
-    return codigoPrecio;
-  }
+	public Libro(String nombre, int priceCode) {
+		this.nombre = nombre;
+		this.codigoPrecio = priceCode;
+	}
+// SE QUEDAN ESTOS GETTERS Y SETTER?
 
-  public String nombre() {
-    return nombre;
-  }
+	public int codigoPrecio() {
+		return codigoPrecio;
+	}
+
+	public String nombre() {
+		return nombre;
+	}
+
+	public abstract double calcularMonto(int cantidadDias);
+
+	public int puntosAlquilerFrecuente() {
+		int puntos = 1;
+		return puntos;
+	}
+
 }
